@@ -30,12 +30,12 @@ public class ElevController {
         elevMap.put(elev4.getId(), elev4);
     }
 
-    @RequestMapping(value = "/persoana", method = RequestMethod.GET)
+    @RequestMapping(value = "/elev", method = RequestMethod.GET)
     public List<Elev> getAll() {
         return new ArrayList<Elev>(this.elevMap.values());
     }
 
-    @RequestMapping(value = "/persoana", method = RequestMethod.POST)
+    @RequestMapping(value = "/elev", method = RequestMethod.POST)
     public ResponseEntity saveOne() {
         Elev elev = new Elev(6, "Elev nou", "Cnp nou", 18);
         //verifica daca id-ul este duplicat
@@ -47,7 +47,7 @@ public class ElevController {
         return new ResponseEntity<Elev>(elev, new HttpHeaders(), HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/persoana/id", method = RequestMethod.GET)
+    @RequestMapping(value = "/elev/id", method = RequestMethod.GET)
     public ResponseEntity getOne(@PathVariable("id") int id) {
         if (!elevMap.containsKey(id)) {
             return new ResponseEntity(null, new HttpHeaders(), HttpStatus.BAD_REQUEST);
@@ -55,7 +55,7 @@ public class ElevController {
         return new ResponseEntity<Elev>(elevMap.get(id), new HttpHeaders(), HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/persoana/id", method = RequestMethod.PUT)
+    @RequestMapping(value = "/elev/id", method = RequestMethod.PUT)
     public ResponseEntity updateOne(@PathVariable("id") int id) {
         if (!elevMap.containsKey(id)) {
             return new ResponseEntity(null, new HttpHeaders(), HttpStatus.NOT_FOUND);
@@ -71,7 +71,7 @@ public class ElevController {
         return new ResponseEntity<Elev>(null, new HttpHeaders(), HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/persoana/id", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/elev/id", method = RequestMethod.DELETE)
     public ResponseEntity deleteOne(@PathVariable("id") int id) {
         if (!this.elevMap.containsKey(id)) {
             return new ResponseEntity(null, new HttpHeaders(), HttpStatus.BAD_REQUEST);
