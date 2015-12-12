@@ -1,21 +1,873 @@
 <!DOCTYPE html>
 <html ng-app="blog">
 <head>
-  <title>My application</title>
+  <title>Scoala</title>
   <link rel="stylesheet" media="all" href="css/bootstrap.min.css">
   <link rel="stylesheet" media="all" href="css/custom.css">
 </head>
 <body>
+<div class="container">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="">Proiect AWJ</a>
+      </div>
 
-  <div class="container">
-    <div ng-controller="HomeController">
-      <h1>{{ helloWorld }}</h1>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="#">Elevi</a></li>
+          <li><a href="#">Profesori</a></li>
+          <li><a href="#">Clase</a></li>
+          <li><a href="#">Catalog</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<hr/>
+
+<div class="container">
+    <p>Colegiul National XYZ</p>
+</div>
+
+<hr/>
+
+<!-- /resources1 -->
+<div class="container">
+  <h1>Elevi</h1>
+  <h2>Lista elevilor</h2>
+  <table class="table table-bordered">
+    <tr>
+      <th>Nume</th>
+      <th>CNP</th>
+      <th>Varsta</th>
+      <th style="width:210px;">Optiuni</th>
+    </tr>
+    <tr>
+      <td>Ana Iliescu</td>
+      <td>1990322334422</td>
+      <td>17</td>
+      <td>
+        <a href="">
+            <span class="label label-success">
+              Vizualizare
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+        </a>
+        <a href="">
+            <span class="label label-primary">
+              Editeaza
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+        </a>
+        <a href="">
+            <span class="label label-danger">
+              Sterge
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>Florina Ionescu</td>
+      <td>1980517016812</td>
+      <td>19</td>
+      <td>
+        <a href="">
+            <span class="label label-success">
+              Vizualizare
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+        </a>
+        <a href="">
+            <span class="label label-primary">
+              Editeaza
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+        </a>
+        <a href="">
+            <span class="label label-danger">
+              Sterge
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>Ion Stefanescu</td>
+      <td>1991109256462</td>
+      <td>17</td>
+      <td>
+        <a href="">
+            <span class="label label-success">
+              Vizualizare
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+        </a>
+        <a href="">
+            <span class="label label-primary">
+              Editeaza
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+        </a>
+        <a href="">
+            <span class="label label-danger">
+              Sterge
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>Ion Tiriac</td>
+      <td>1970322110022</td>
+      <td>18</td>
+      <td>
+        <a href="">
+            <span class="label label-success">
+              Vizualizare
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+        </a>
+        <a href="">
+            <span class="label label-primary">
+              Editeaza
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+        </a>
+        <a href="">
+            <span class="label label-danger">
+              Sterge
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+        </a>
+      </td>
+    </tr>
+  </table>
+
+  <div class="row">
+    <div class="col-md-3">
+      <h2>Editeaza elev</h2>
+      <form action="" method="">
+        <div class="form-group">
+          <label for="numeElev">Nume</label>
+          <input type="text" class="form-control" id="numeElev" placeholder="Introduceti numele">
+        </div>
+        <div class="form-group">
+          <label for="cnpElev">CNP</label>
+          <input type="text" class="form-control" id="cnpElev" placeholder="Introduceti CNP">
+        </div>
+        <div class="form-group">
+          <label for="varstaElev">Varsta</label>
+          <input type="text" class="form-control" id="varstaElev" placeholder="Introduceti varsta">
+        </div>
+        <button type="submit" class="btn btn-info">Salveaza</button>
+      </form>
+    </div>
+
+
+    <div class="col-md-3 col-md-offset-6">
+      <h2>Adauga elev</h2>
+      <form action="" method="">
+        <div class="form-group">
+          <label for="numeElev">Nume</label>
+          <input type="text" class="form-control" id="numeElev" placeholder="Introduceti numele...">
+        </div>
+        <div class="form-group">
+          <label for="cnpElev">CNP</label>
+          <input type="text" class="form-control" id="cnpElev" placeholder="Introduceti CNP..">
+        </div>
+        <div class="form-group">
+          <label for="varstaElev">Varsta</label>
+          <input type="text" class="form-control" id="varstaElev" placeholder="Introduceti varsta..">
+        </div>
+        <button type="submit" class="btn btn-success">Adauga</button>
+      </form>
     </div>
   </div>
 
-  <script src="js/jquery-1.11.3.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/angular.min.js"></script>
-  <script src="js/app.js"></script>
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Vizualizeaza elev</h2>
+    </div>
+    <div class="col-md-2">
+      <img src="https://camo.githubusercontent.com/d818d23678800c7755a49d7f5b26ad0d6cb0aea7/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f343932303733362f3733363937342f65323534356335322d653332352d313165322d383030302d3864646163393762653831352e706e67" class="img-thumbnail"/>
+    </div>
+    <div class="col-md-10">
+      <h1>Ana Mihaela</h1>
+      <p><b>CNP:</b>1990322789900</p>
+      <p><b>Varsta:</b>17</p>
+    </div>
+  </div>
+</div>
+<hr/>
+
+<!-- /profesori-->
+<div class="container">
+  <h1>Profesori</h1>
+  <h2>Lista profesorilor</h2>
+  <table class="table table-bordered">
+    <tr>
+      <th>Nume</th>
+      <th>Materie</th>
+      <th>Ani experienta</th>
+      <th style="width:210px;">Options</th>
+    </tr>
+    <tr>
+      <td>Calin Delureanu</td>
+      <td>Fizica</td>
+      <td>17</td>
+      <td>
+        <a href="">
+            <span class="label label-success">
+              Vizualizare
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+        </a>
+        <a href="">
+            <span class="label label-primary">
+              Editeaza
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+        </a>
+        <a href="">
+            <span class="label label-danger">
+              Sterge
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>Cristina Mihailescu</td>
+      <td>Chimie</td>
+      <td>23</td>
+      <td>
+        <a href="">
+            <span class="label label-success">
+              Vizualizare
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+        </a>
+        <a href="">
+            <span class="label label-primary">
+              Editeaza
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+        </a>
+        <a href="">
+            <span class="label label-danger">
+              Sterge
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>Marian Florescu</td>
+      <td>Matematica</td>
+      <td>8</td>
+      <td>
+        <a href="">
+            <span class="label label-success">
+              Vizualizare
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+        </a>
+        <a href="">
+            <span class="label label-primary">
+              Editeaza
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+        </a>
+        <a href="">
+            <span class="label label-danger">
+              Sterge
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>Madalina Achim</td>
+      <td>Informatica</td>
+      <td>17</td>
+      <td>
+        <a href="">
+            <span class="label label-success">
+              Vizualizare
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+        </a>
+        <a href="">
+            <span class="label label-primary">
+              Editeaza
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+        </a>
+        <a href="">
+            <span class="label label-danger">
+              Sterge
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+        </a>
+      </td>
+    </tr>
+  </table>
+
+  <div class="row">
+    <div class="col-md-3">
+      <h2>Editeaza profesor</h2>
+      <form action="" method="">
+        <div class="form-group">
+          <label for="numeProf">Nume</label>
+          <input type="text" class="form-control" id="numeProf" placeholder="Introduceti numele..">
+        </div>
+        <div class="form-group">
+          <label for="materieProf">Materie</label>
+          <input type="text" class="form-control" id="materieProf" placeholder="Introduceti numele materiei...">
+        </div>
+        <div class="form-group">
+          <label for="aniProf">Ani experienta</label>
+          <input type="text" class="form-control" id="aniProf" placeholder="Introduceti anii de experienta..">
+        </div>
+
+        <button type="submit" class="btn btn-info">Salveaza</button>
+      </form>
+    </div>
+
+
+    <div class="col-md-3 col-md-offset-6">
+      <h2>Adauga profesor</h2>
+      <form action="" method="">
+        <div class="form-group">
+          <label for="numeProf">Nume</label>
+          <input type="text" class="form-control" id="numeProf" placeholder="Introduceti numele..">
+        </div>
+        <div class="form-group">
+          <label for="materieProf">Materie</label>
+          <input type="text" class="form-control" id="materieProf" placeholder="Introduceti numele materiei...">
+        </div>
+        <div class="form-group">
+          <label for="aniProf">Ani experienta</label>
+          <input type="text" class="form-control" id="aniProf" placeholder="Introduceti anii de experienta..">
+        </div>
+        <button type="submit" class="btn btn-success">Adauga</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Vizualizeaza profesor</h2>
+    </div>
+    <div class="col-md-2">
+      <img src="http://icons.iconarchive.com/icons/iconsmind/outline/512/Professor-icon.png" class="img-thumbnail"/>
+    </div>
+    <div class="col-md-10">
+      <h1>Calin Delureanu</h1>
+      <p><b>Materie: </b>Fizica</p>
+      <p><b>Ani experienta: </b>17</p>
+      <!--<h3>Sub resource</h3>-->
+      <!--<table class="table table-bordered table-striped">-->
+        <!--<tr>-->
+          <!--<th>Attribute 5</th>-->
+          <!--<th>Attribute 6</th>-->
+        <!--</tr>-->
+        <!--<tr>-->
+          <!--<td>Lorem ipsum</td>-->
+          <!--<td>Lorem</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+          <!--<td>Lorem ipsum dolor</td>-->
+          <!--<td>Sir</td>-->
+        <!--</tr>-->
+      <!--</table>-->
+    </div>
+  </div>
+</div>
+<hr/>
+
+
+<!-- /clase-->
+<div class="container">
+  <h1>Clase</h1>
+  <h2>Lista claselor</h2>
+  <table class="table table-bordered">
+    <tr>
+      <th>Nume</th>
+      <th>Numar Elevi</th>
+      <th>Numar Profesori</th>
+      <th style="width:210px;">Options</th>
+    </tr>
+    <tr>
+      <td>12 R1</td>
+      <td>22</td>
+      <td>14</td>
+      <td>
+        <a href="">
+            <span class="label label-success">
+              Vizualizare
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+        </a>
+        <a href="">
+            <span class="label label-primary">
+              Editeaza
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+        </a>
+        <a href="">
+            <span class="label label-danger">
+              Sterge
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>11 B2</td>
+      <td>28</td>
+      <td>15</td>
+      <td>
+        <a href="">
+            <span class="label label-success">
+              Vizualizare
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+        </a>
+        <a href="">
+            <span class="label label-primary">
+              Editeaza
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+        </a>
+        <a href="">
+            <span class="label label-danger">
+              Sterge
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>12 R3</td>
+      <td>29</td>
+      <td>14</td>
+      <td>
+        <a href="">
+            <span class="label label-success">
+              Vizualizare
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+        </a>
+        <a href="">
+            <span class="label label-primary">
+              Editeaza
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+        </a>
+        <a href="">
+            <span class="label label-danger">
+              Sterge
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>10 M2</td>
+      <td>28</td>
+      <td>11</td>
+      <td>
+        <a href="">
+            <span class="label label-success">
+              Vizualizare
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+        </a>
+        <a href="">
+            <span class="label label-primary">
+              Editeaza
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+        </a>
+        <a href="">
+            <span class="label label-danger">
+              Sterge
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+        </a>
+      </td>
+    </tr>
+  </table>
+
+  <div class="row">
+    <div class="col-md-3">
+      <h2>Editeaza clasa</h2>
+      <form action="" method="">
+        <div class="form-group">
+          <label for="numeClasa">Nume</label>
+          <input type="text" class="form-control" id="numeClasa" placeholder="Introduceti numele..">
+        </div>
+        <button type="submit" class="btn btn-info">Salveaza</button>
+      </form>
+    </div>
+
+
+    <div class="col-md-3 col-md-offset-6">
+      <h2>Adauga clasa</h2>
+      <form action="" method="">
+        <div class="form-group">
+          <label for="numeClasa">Nume</label>
+          <input type="text" class="form-control" id="numeClasa" placeholder="Introduceti numele clasei..">
+        </div>
+        <button type="submit" class="btn btn-success">Adauga</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Vizualizeaza clasa</h2>
+    </div>
+    <div class="col-md-2">
+      <img src="http://icons.iconarchive.com/icons/icons8/ios7/256/Science-Classroom-icon.png" class="img-thumbnail"/>
+    </div>
+    <div class="col-md-10">
+      <h1>12 R1</h1>
+      <h3>Lista elevi</h3>
+      <table class="table table-bordered table-striped">
+      <tr>
+      <th>Nume</th>
+      <th>Varsta</th>
+      <th>Optiuni</th>
+      </tr>
+      <tr>
+      <td>Ana Blandiana</td>
+      <td>19</td>
+
+        <td>
+          <a href="">
+            <span class="label label-success">
+              Vizualizare
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-primary">
+              Editeaza
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-danger">
+              Sterge
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+      <td>Mihai Mahalache</td>
+      <td>18</td>
+
+        <td>
+          <a href="">
+            <span class="label label-success">
+              Vizualizare
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-primary">
+              Editeaza
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-danger">
+              Sterge
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+          </a>
+        </td>
+      </tr>
+      </table>
+      <h3>Lista profesori</h3>
+      <table class="table table-bordered table-striped">
+        <tr>
+          <th>Nume</th>
+          <th>Materie</th>
+          <th>Ani de experienta</th>
+          <th>Optiuni</th>
+        </tr>
+
+        <tr>
+          <td>Marian Florescu</td>
+          <td>Matematica</td>
+          <td>8</td>
+          <td>
+            <a href="">
+            <span class="label label-success">
+              Vizualizare
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+            </a>
+            <a href="">
+            <span class="label label-primary">
+              Editeaza
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+            </a>
+            <a href="">
+            <span class="label label-danger">
+              Sterge
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>Madalina Achim</td>
+          <td>Informatica</td>
+          <td>17</td>
+          <td>
+            <a href="">
+            <span class="label label-success">
+              Vizualizare
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+            </a>
+            <a href="">
+            <span class="label label-primary">
+              Editeaza
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+            </a>
+            <a href="">
+            <span class="label label-danger">
+              Sterge
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+            </a>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+<hr/>
+
+<!-- /catalog-->
+<div class="container">
+  <h1>Catalog</h1>
+  <h2>Lista cataloagelor</h2>
+  <table class="table table-bordered">
+    <tr>
+      <th>Cod Catalog</th>
+      <th>Clasa</th>
+      <th style="width:210px;">Options</th>
+    </tr>
+    <tr>
+      <td>CATALOG_22</td>
+      <td>12 R1</td>
+      <td>
+        <a href="">
+            <span class="label label-success">
+              Vizualizare
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+        </a>
+        <a href="">
+            <span class="label label-primary">
+              Editeaza
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+        </a>
+        <a href="">
+            <span class="label label-danger">
+              Sterge
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>CATALOG_39</td>
+      <td>9 P2</td>
+      <td>
+        <a href="">
+            <span class="label label-success">
+              Vizualizare
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+        </a>
+        <a href="">
+            <span class="label label-primary">
+              Editeaza
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+        </a>
+        <a href="">
+            <span class="label label-danger">
+              Sterge
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>CATALOG_175</td>
+      <td>10 F2</td>
+      <td>
+        <a href="">
+            <span class="label label-success">
+              Vizualizare
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+        </a>
+        <a href="">
+            <span class="label label-primary">
+              Editeaza
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+        </a>
+        <a href="">
+            <span class="label label-danger">
+              Sterge
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>CATALOG_10</td>
+      <td>12 R3</td>
+      <td>
+        <a href="">
+            <span class="label label-success">
+              Vizualizare
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+        </a>
+        <a href="">
+            <span class="label label-primary">
+              Editeaza
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+        </a>
+        <a href="">
+            <span class="label label-danger">
+              Sterge
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+        </a>
+      </td>
+    </tr>
+  </table>
+
+  <div class="row">
+    <div class="col-md-3">
+      <h2>Editeaza catalog</h2>
+      <form action="" method="">
+        <div class="form-group">
+          <label for="codCatalog">Cod catalog</label>
+          <input type="text" class="form-control" id="codCatalog" placeholder="Introduceti cod catalog..">
+        </div>
+        <div class="form-group">
+          <label for="numeCatalog">Nume clasa</label>
+          <input type="text" class="form-control" id="numeCatalog" placeholder="Introduceti numele clasei...">
+        </div>
+
+        <button type="submit" class="btn btn-info">Salveaza</button>
+      </form>
+    </div>
+
+
+    <div class="col-md-3 col-md-offset-6">
+      <h2>Adauga catalog</h2>
+      <form action="" method="">
+        <div class="form-group">
+          <label for="codCatalog">Cod catalog</label>
+          <input type="text" class="form-control" id="codCatalog" placeholder="Introduceti cod catalog..">
+        </div>
+        <div class="form-group">
+          <label for="numeCatalog">Nume clasa</label>
+          <input type="text" class="form-control" id="numeCatalog" placeholder="Introduceti numele clasei...">
+        </div>
+
+        <button type="submit" class="btn btn-success">Adauga</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Vizualizeaza catalog</h2>
+    </div>
+    <div class="col-md-2">
+      <img src="http://icons.iconarchive.com/icons/icons8/ios7/256/Very-Basic-Opened-Folder-icon.png" class="img-thumbnail"/>
+    </div>
+    <div class="col-md-10">
+      <h1>12 R1</h1>
+      <p><b>Cod:</b>CATALOG_22</p>
+      <h3>Clasa</h3>
+      <table class="table table-bordered table-striped">
+      <tr>
+      <th>Nume Clasa</th>
+      <th>Numar Elevi</th>
+      <th>Numar Profesori</th>
+      <th>Optiuni</th>
+      </tr>
+      <tr>
+      <td>12 R1</td>
+      <td>24</td>
+      <td>14</td>
+        <td>
+          <a href="">
+            <span class="label label-success">
+              Vizualizare
+              <span class="glyphicon glyphicon-folder-open"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-primary">
+              Editeaza
+              <span class="glyphicon glyphicon-edit"></span>
+            </span>
+          </a>
+          <a href="">
+            <span class="label label-danger">
+              Sterge
+              <span class="glyphicon glyphicon-remove"></span>
+            </span>
+          </a>
+        </td>
+      </tr>
+      </table>
+    </div>
+  </div>
+</div>
+<hr/>
+
+<div class="container">
+  <footer class="footer">
+    <p class="text-muted pull-left">Tema AWJ &copy; 2015-2016</p>
+    <p class="text-muted pull-right">Andrei Alexandru Marica , 334AA</p>
+  </footer>
+</div>
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
