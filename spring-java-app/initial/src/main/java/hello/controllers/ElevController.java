@@ -43,7 +43,7 @@ public class ElevController {
     @RequestMapping(value = "/elev", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity saveOne() {
 
-        Elev elev = new Elev(6, "Elev nou", "Cnp nou", 18);
+        Elev elev = new Elev(elevMap.keySet().size()+1, "Elev nou", "Cnp nou", 18);
 
         //verifica daca id-ul este duplicat
         if (elevMap.containsKey(elev.getId())) {
@@ -80,7 +80,7 @@ public class ElevController {
 
         this.elevMap.put(updatedElev.getId(), updatedElev);
 
-        return new ResponseEntity(null, new HttpHeaders(), HttpStatus.OK);
+        return new ResponseEntity<Elev>(elevMap.get(updatedElev.getId()), new HttpHeaders(), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/elev/{id}", method = RequestMethod.DELETE)

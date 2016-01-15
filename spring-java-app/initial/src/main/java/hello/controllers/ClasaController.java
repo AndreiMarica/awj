@@ -101,7 +101,7 @@ public class ClasaController {
 
         this.clasaMap.put(updatedClasa.getId(), updatedClasa);
 
-        return new ResponseEntity(null, new HttpHeaders(), HttpStatus.OK);
+        return new ResponseEntity(updatedClasa, new HttpHeaders(), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/clasa/{id}", method = RequestMethod.DELETE)
