@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html ng-app="blog">
 <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="js/angular.min.js"></script>
   <title>Scoala</title>
   <link rel="stylesheet" media="all" href="css/bootstrap.min.css">
   <link rel="stylesheet" media="all" href="css/custom.css">
@@ -40,9 +42,10 @@
 <hr/>
 
 <!-- /resources1 -->
-<div class="container">
+<div class="container" ng-controller="ElevController">
   <h1>Elevi</h1>
   <h2>Lista elevilor</h2>
+  <button type="button" class="btn btn-default" ng-click="saveElev()">Adauga 1 elev</button>
   <table class="table table-bordered">
     <tr>
       <th>Nume</th>
@@ -50,104 +53,22 @@
       <th>Varsta</th>
       <th style="width:210px;">Optiuni</th>
     </tr>
-    <tr>
-      <td>Ana Iliescu</td>
-      <td>1990322334422</td>
-      <td>17</td>
+    <tr ng-repeat="elev in elevi">
       <td>
-        <a href="">
-            <span class="label label-success">
-              Vizualizare
-              <span class="glyphicon glyphicon-folder-open"></span>
-            </span>
-        </a>
-        <a href="">
-            <span class="label label-primary">
-              Editeaza
-              <span class="glyphicon glyphicon-edit"></span>
-            </span>
-        </a>
-        <a href="">
-            <span class="label label-danger">
-              Sterge
-              <span class="glyphicon glyphicon-remove"></span>
-            </span>
-        </a>
+        {{elev.id}}
       </td>
-    </tr>
-    <tr>
-      <td>Florina Ionescu</td>
-      <td>1980517016812</td>
-      <td>19</td>
       <td>
-        <a href="">
-            <span class="label label-success">
-              Vizualizare
-              <span class="glyphicon glyphicon-folder-open"></span>
-            </span>
-        </a>
-        <a href="">
-            <span class="label label-primary">
-              Editeaza
-              <span class="glyphicon glyphicon-edit"></span>
-            </span>
-        </a>
-        <a href="">
-            <span class="label label-danger">
-              Sterge
-              <span class="glyphicon glyphicon-remove"></span>
-            </span>
-        </a>
+        {{elev.nume}}
       </td>
-    </tr>
-    <tr>
-      <td>Ion Stefanescu</td>
-      <td>1991109256462</td>
-      <td>17</td>
       <td>
-        <a href="">
-            <span class="label label-success">
-              Vizualizare
-              <span class="glyphicon glyphicon-folder-open"></span>
-            </span>
-        </a>
-        <a href="">
-            <span class="label label-primary">
-              Editeaza
-              <span class="glyphicon glyphicon-edit"></span>
-            </span>
-        </a>
-        <a href="">
-            <span class="label label-danger">
-              Sterge
-              <span class="glyphicon glyphicon-remove"></span>
-            </span>
-        </a>
+        {{elev.cnp}}
       </td>
-    </tr>
-    <tr>
-      <td>Ion Tiriac</td>
-      <td>1970322110022</td>
-      <td>18</td>
       <td>
-        <a href="">
-            <span class="label label-success">
-              Vizualizare
-              <span class="glyphicon glyphicon-folder-open"></span>
-            </span>
-        </a>
-        <a href="">
-            <span class="label label-primary">
-              Editeaza
-              <span class="glyphicon glyphicon-edit"></span>
-            </span>
-        </a>
-        <a href="">
-            <span class="label label-danger">
-              Sterge
-              <span class="glyphicon glyphicon-remove"></span>
-            </span>
-        </a>
+        {{elev.varsta}}
+      </td>
+      <td>
+        <button type="button" class="btn btn-default" ng-click="updateElev(elev.id)">Editeaza</button>
+        <button type="button" class="btn btn-default" ng-click="deleteElev(elev.id)">Sterge</button>
       </td>
     </tr>
   </table>
@@ -210,116 +131,35 @@
 <hr/>
 
 <!-- /profesori-->
-<div class="container">
+<div class="container" ng-controller="ProfesorController">
   <h1>Profesori</h1>
   <h2>Lista profesorilor</h2>
+  <button type="button" class="btn btn-default" ng-click="saveProf()">Adauga 1 prof</button>
   <table class="table table-bordered">
     <tr>
+      <th>ID Prof</th>
       <th>Nume</th>
       <th>Materie</th>
       <th>Ani experienta</th>
       <th style="width:210px;">Options</th>
     </tr>
-    <tr>
-      <td>Calin Delureanu</td>
-      <td>Fizica</td>
-      <td>17</td>
-      <td>
-        <a href="">
-            <span class="label label-success">
-              Vizualizare
-              <span class="glyphicon glyphicon-folder-open"></span>
-            </span>
-        </a>
-        <a href="">
-            <span class="label label-primary">
-              Editeaza
-              <span class="glyphicon glyphicon-edit"></span>
-            </span>
-        </a>
-        <a href="">
-            <span class="label label-danger">
-              Sterge
-              <span class="glyphicon glyphicon-remove"></span>
-            </span>
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td>Cristina Mihailescu</td>
-      <td>Chimie</td>
-      <td>23</td>
-      <td>
-        <a href="">
-            <span class="label label-success">
-              Vizualizare
-              <span class="glyphicon glyphicon-folder-open"></span>
-            </span>
-        </a>
-        <a href="">
-            <span class="label label-primary">
-              Editeaza
-              <span class="glyphicon glyphicon-edit"></span>
-            </span>
-        </a>
-        <a href="">
-            <span class="label label-danger">
-              Sterge
-              <span class="glyphicon glyphicon-remove"></span>
-            </span>
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td>Marian Florescu</td>
-      <td>Matematica</td>
-      <td>8</td>
-      <td>
-        <a href="">
-            <span class="label label-success">
-              Vizualizare
-              <span class="glyphicon glyphicon-folder-open"></span>
-            </span>
-        </a>
-        <a href="">
-            <span class="label label-primary">
-              Editeaza
-              <span class="glyphicon glyphicon-edit"></span>
-            </span>
-        </a>
-        <a href="">
-            <span class="label label-danger">
-              Sterge
-              <span class="glyphicon glyphicon-remove"></span>
-            </span>
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td>Madalina Achim</td>
-      <td>Informatica</td>
-      <td>17</td>
-      <td>
-        <a href="">
-            <span class="label label-success">
-              Vizualizare
-              <span class="glyphicon glyphicon-folder-open"></span>
-            </span>
-        </a>
-        <a href="">
-            <span class="label label-primary">
-              Editeaza
-              <span class="glyphicon glyphicon-edit"></span>
-            </span>
-        </a>
-        <a href="">
-            <span class="label label-danger">
-              Sterge
-              <span class="glyphicon glyphicon-remove"></span>
-            </span>
-        </a>
-      </td>
-    </tr>
+      <tr ng-repeat="prof in profi">
+        <td>
+          {{prof.numeProfesor}}
+        </td>
+        <td>
+          {{prof.materieProfesor}}
+        </td>
+        <td>
+          {{prof.aniVechime}}
+        </td>
+        <td>
+          <button type="button" class="btn btn-default" ng-click="updateProf(prof.id)">Editeaza</button>
+          <button type="button" class="btn btn-default" ng-click="deleteProf(prof.id)">Sterge</button>
+        </td>
+      </tr>
+    </table>
+
   </table>
 
   <div class="row">
@@ -400,115 +240,31 @@
 <div class="container">
   <h1>Clase</h1>
   <h2>Lista claselor</h2>
+  <button type="button" class="btn btn-default" ng-click="saveClasa()">Adauga 1 clasa</button>
   <table class="table table-bordered">
     <tr>
-      <th>Nume</th>
-      <th>Numar Elevi</th>
-      <th>Numar Profesori</th>
+      <th>Nume Clasa</th>
+      <th>Lista Elevi</th>
+      <th>Lista Profesori</th>
       <th style="width:210px;">Options</th>
     </tr>
-    <tr>
-      <td>12 R1</td>
-      <td>22</td>
-      <td>14</td>
-      <td>
-        <a href="">
-            <span class="label label-success">
-              Vizualizare
-              <span class="glyphicon glyphicon-folder-open"></span>
-            </span>
-        </a>
-        <a href="">
-            <span class="label label-primary">
-              Editeaza
-              <span class="glyphicon glyphicon-edit"></span>
-            </span>
-        </a>
-        <a href="">
-            <span class="label label-danger">
-              Sterge
-              <span class="glyphicon glyphicon-remove"></span>
-            </span>
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td>11 B2</td>
-      <td>28</td>
-      <td>15</td>
-      <td>
-        <a href="">
-            <span class="label label-success">
-              Vizualizare
-              <span class="glyphicon glyphicon-folder-open"></span>
-            </span>
-        </a>
-        <a href="">
-            <span class="label label-primary">
-              Editeaza
-              <span class="glyphicon glyphicon-edit"></span>
-            </span>
-        </a>
-        <a href="">
-            <span class="label label-danger">
-              Sterge
-              <span class="glyphicon glyphicon-remove"></span>
-            </span>
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td>12 R3</td>
-      <td>29</td>
-      <td>14</td>
-      <td>
-        <a href="">
-            <span class="label label-success">
-              Vizualizare
-              <span class="glyphicon glyphicon-folder-open"></span>
-            </span>
-        </a>
-        <a href="">
-            <span class="label label-primary">
-              Editeaza
-              <span class="glyphicon glyphicon-edit"></span>
-            </span>
-        </a>
-        <a href="">
-            <span class="label label-danger">
-              Sterge
-              <span class="glyphicon glyphicon-remove"></span>
-            </span>
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td>10 M2</td>
-      <td>28</td>
-      <td>11</td>
-      <td>
-        <a href="">
-            <span class="label label-success">
-              Vizualizare
-              <span class="glyphicon glyphicon-folder-open"></span>
-            </span>
-        </a>
-        <a href="">
-            <span class="label label-primary">
-              Editeaza
-              <span class="glyphicon glyphicon-edit"></span>
-            </span>
-        </a>
-        <a href="">
-            <span class="label label-danger">
-              Sterge
-              <span class="glyphicon glyphicon-remove"></span>
-            </span>
-        </a>
-      </td>
-    </tr>
-  </table>
 
+    <tr ng-repeat="clasa in clase">
+    <td>
+      {{clasa.numeClasa}}
+    </td>
+    <td>
+      {{clasa.elevi}}
+    </td>
+    <td>
+      {{clasa.profesori}}
+    </td>
+    <td>
+      <button type="button" class="btn btn-default" ng-click="updateClasa(clasa.id)">Editeaza</button>
+      <button type="button" class="btn btn-default" ng-click="deleteClasa(clasa.id)">Sterge</button>
+    </td>
+  </tr>
+</table>
   <div class="row">
     <div class="col-md-3">
       <h2>Editeaza clasa</h2>
@@ -670,106 +426,28 @@
 <div class="container">
   <h1>Catalog</h1>
   <h2>Lista cataloagelor</h2>
+  <button type="button" class="btn btn-default" ng-click="saveCatalog()">Adauga 1 catalog</button>
   <table class="table table-bordered">
     <tr>
+      <th>ID Catalog</th>
       <th>Cod Catalog</th>
       <th>Clasa</th>
       <th style="width:210px;">Options</th>
     </tr>
-    <tr>
-      <td>CATALOG_22</td>
-      <td>12 R1</td>
+
+    <tr ng-repeat="ctg in cataloage">
       <td>
-        <a href="">
-            <span class="label label-success">
-              Vizualizare
-              <span class="glyphicon glyphicon-folder-open"></span>
-            </span>
-        </a>
-        <a href="">
-            <span class="label label-primary">
-              Editeaza
-              <span class="glyphicon glyphicon-edit"></span>
-            </span>
-        </a>
-        <a href="">
-            <span class="label label-danger">
-              Sterge
-              <span class="glyphicon glyphicon-remove"></span>
-            </span>
-        </a>
+        {{ctg.id}}
       </td>
-    </tr>
-    <tr>
-      <td>CATALOG_39</td>
-      <td>9 P2</td>
       <td>
-        <a href="">
-            <span class="label label-success">
-              Vizualizare
-              <span class="glyphicon glyphicon-folder-open"></span>
-            </span>
-        </a>
-        <a href="">
-            <span class="label label-primary">
-              Editeaza
-              <span class="glyphicon glyphicon-edit"></span>
-            </span>
-        </a>
-        <a href="">
-            <span class="label label-danger">
-              Sterge
-              <span class="glyphicon glyphicon-remove"></span>
-            </span>
-        </a>
+        {{ctg.codCatalog}}
       </td>
-    </tr>
-    <tr>
-      <td>CATALOG_175</td>
-      <td>10 F2</td>
       <td>
-        <a href="">
-            <span class="label label-success">
-              Vizualizare
-              <span class="glyphicon glyphicon-folder-open"></span>
-            </span>
-        </a>
-        <a href="">
-            <span class="label label-primary">
-              Editeaza
-              <span class="glyphicon glyphicon-edit"></span>
-            </span>
-        </a>
-        <a href="">
-            <span class="label label-danger">
-              Sterge
-              <span class="glyphicon glyphicon-remove"></span>
-            </span>
-        </a>
+        {{ctg.clasa}}
       </td>
-    </tr>
-    <tr>
-      <td>CATALOG_10</td>
-      <td>12 R3</td>
       <td>
-        <a href="">
-            <span class="label label-success">
-              Vizualizare
-              <span class="glyphicon glyphicon-folder-open"></span>
-            </span>
-        </a>
-        <a href="">
-            <span class="label label-primary">
-              Editeaza
-              <span class="glyphicon glyphicon-edit"></span>
-            </span>
-        </a>
-        <a href="">
-            <span class="label label-danger">
-              Sterge
-              <span class="glyphicon glyphicon-remove"></span>
-            </span>
-        </a>
+        <button type="button" class="btn btn-default" ng-click="updateCatalog(ctg.id)">Editeaza</button>
+        <button type="button" class="btn btn-default" ng-click="deleteCatalog(ctg.id)">Sterge</button>
       </td>
     </tr>
   </table>
